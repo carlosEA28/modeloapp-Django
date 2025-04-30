@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CategoryForm
-from .models import models
+from .models import Category, models
 
 # Create your views here.
 
@@ -17,4 +17,11 @@ def add_Category(request):
             return redirect("core:home")  # Corrigido o nome da URL aqui
     form = CategoryForm()
     context["form"] = form
+    return render(request, template_name, context)
+
+
+def list_categories(request):
+    template_name = "categories/list_categories.html"
+    categories = Category.objects.filter()
+    context = {"categories": categories}
     return render(request, template_name, context)
