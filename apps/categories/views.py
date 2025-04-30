@@ -10,11 +10,11 @@ def add_Category(request):
     context = {}
     if request.method == "POST":
         form = CategoryForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():  # Corrigido o erro aqui
             f = form.save(commit=False)
             f.save()
             form.save_m2m()
-            return redirect("core:home.html")
+            return redirect("core:home")  # Corrigido o nome da URL aqui
     form = CategoryForm()
     context["form"] = form
     return render(request, template_name, context)
