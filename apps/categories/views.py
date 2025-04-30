@@ -50,3 +50,6 @@ def delete_category(request, id_category):
     category = Category.objects.get(id=id_category)
     category.delete()
     return redirect("categories:list_categories")
+
+
+# teste
