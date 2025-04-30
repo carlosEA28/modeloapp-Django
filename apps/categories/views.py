@@ -15,7 +15,9 @@ def add_Category(request):
             f = form.save(commit=False)
             f.save()
             form.save_m2m()
-            return redirect("core:home")  # Corrigido o nome da URL aqui
+            return redirect(
+                "categories:list_categories"
+            )  # Corrigido o nome da URL aqui
     form = CategoryForm()
     context["form"] = form
     return render(request, template_name, context)
@@ -42,3 +44,12 @@ def edit_category(request, id_category):
     form = CategoryForm(instance=category)
     context["form"] = form
     return render(request, template_name, context)
+
+
+def delete_category(request, id_category):
+    category = Category.objects.get(id=id_category)
+    category.delete()
+    return redirect("categories:list_categories")
+
+
+# teste
