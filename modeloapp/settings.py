@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "categories.apps.CategoriesConfig",
     "SocialNetworks.apps.SocialnetworksConfig",
     "order.apps.OrderConfig",
+    "product.apps.ProductConfig",
 ]
 
 
