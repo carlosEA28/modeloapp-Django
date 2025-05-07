@@ -47,8 +47,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
     "categories.apps.CategoriesConfig",
-    "client.apps.ClientConfig",
 ]
+
+# "client.apps.ClientConfig",
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
