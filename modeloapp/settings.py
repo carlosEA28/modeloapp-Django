@@ -47,7 +47,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
     "categories.apps.CategoriesConfig",
+<<<<<<< HEAD
     "clients.apps.ClientsConfig",
+=======
+    "SocialNetworks.apps.SocialnetworksConfig",
+    "order.apps.OrderConfig",
+>>>>>>> 1a2d7d62ad4d829591ab71b4d74551d67fb6a19d
 ]
 
 # "client.apps.ClientConfig",
