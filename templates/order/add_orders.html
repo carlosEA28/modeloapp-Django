@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Adicionar Pedido - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+  <b>Cadastro de Pedido</b>
+  <br />
+  <br />
+  <form action="" method="POST">
+    {% csrf_token %}
+    <label>Preço total:</label>
+    <br />
+    {{ form.total_price }}
+    <br />
+    <br />
+    <label>status:</label>
+    <br />
+    {{ form.status }}
+    <br />
+    <br />
+    <label>Cliente:</label>
+    <br />
+    {{ form.client }}
+    <br />
+    <br />
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}

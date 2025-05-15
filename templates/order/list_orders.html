@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Pedidos - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+   <br />
+    <a href="{% url 'orders:add_orders' %}">Cadastro de novo Pedido</a>
+  <br />
+  <br />
+  <b>Lista de Pedidos</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Preço Total</th>
+        <th scope="col">Situação do pedido</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+        <tr>
+          <th>{{ order.id }}</th>
+          <td>{{ order.total_price }}</td>
+          <td>{{ order.get_status_display }}</td>
+          <td>{{ order.client }}</td>
+          <td>
+            <a href="{% url 'orders:edit_orders' order.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'orders:delete_orders' order.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
