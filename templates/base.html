@@ -14,7 +14,7 @@
     <a href="{% url 'core:home' %}" ><img src="{% static 'img/menu.png' %}" width="200" height="60" /></a>
     <br />
     <a href="{% url 'categories:list_categories' %}" ><button onclick="mudarCor()">Categorias</button></a>
-    <a href="#" ><button onclick="alertarMensagem()">Produtos</button></a>
+    <a href="{% url 'products:list_products' %}" ><button onclick="mudarCor()">Produtos</button></a>
     <a href="#" ><button onclick="alertarMensagem()">Clientes</button></a>
     <a href="#" ><button onclick="alertarMensagem()">Pedidos</button></a>
     <br />
