@@ -1,4 +1,6 @@
 .env
+__pycache__/
+*.pyc
 modeloapp/_pycache_/*
 categories/_pycache_/*
 cliens/_pycache_/*

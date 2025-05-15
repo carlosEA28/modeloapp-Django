@@ -38,7 +38,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -48,12 +47,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
     "categories.apps.CategoriesConfig",
+    "clients.apps.ClientsConfig",
     "SocialNetworks.apps.SocialnetworksConfig",
     "order.apps.OrderConfig",
     "product.apps.ProductConfig",
 ]
 
-
+# "client.apps.ClientConfig",
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
