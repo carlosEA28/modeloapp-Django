@@ -12,7 +12,7 @@ def add_products(request):
             f = form.save(commit=False)
             f.save()
             form.save_m2m()
-            return redirect('categories:list_categories')
+            return redirect('products:list_products')
     form = ProductForm()
     context['form'] = form
     return render(request, template_name, context)
