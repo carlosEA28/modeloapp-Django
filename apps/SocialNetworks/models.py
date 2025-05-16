@@ -1,15 +1,13 @@
 from django.db import models
 
-# Create your models here.
-
 class SocialNetwork(models.Model):
-    name = models.CharField("Nome", max_length=50)
-    description = models.TextField("Descricao", max_length=100)
+    name = models.CharField('Nome', max_length=100)
+    description = models.TextField('Descrição')
 
     class Meta:
-        verbose_name = "SocialNetwork"
-        verbose_name_plural = "SocialNetworks"
-        ordering = ["id"]
+        verbose_name = 'Rede Social'
+        verbose_name_plural = 'Redes Sociais'
+        ordering = ['name']
 
     def __str__(self):
         return self.name
