@@ -48,12 +48,11 @@ INSTALLED_APPS = [
     "core.apps.CoreConfig",
     "categories.apps.CategoriesConfig",
     "clients.apps.ClientsConfig",
-    "SocialNetworks.apps.SocialnetworksConfig",
     "order.apps.OrderConfig",
     "product.apps.ProductConfig",
+    "socialnetworks.apps.SocialnetworksConfig",
 ]
 
-# "client.apps.ClientConfig",
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

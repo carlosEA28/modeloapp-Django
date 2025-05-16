@@ -10,6 +10,7 @@ urlpatterns = [
     path("produtos/", include("product.urls", namespace="products")),
     path("clientes/", include("clients.urls", namespace="clients")),
     path("pedidos/", include("order.urls", namespace="orders")),
+    path('socialnetworks/', include('socialnetworks.urls', namespace="socialnetworks")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
