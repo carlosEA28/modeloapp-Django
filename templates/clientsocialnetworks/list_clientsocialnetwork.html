@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Clientes em Redes Sociais - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+  <a href="{% url 'clientsocialnetworks:add_clientsocialnetwork' %}">Cadastro de novo Cliente em Rede Social</a>
+  <br />
+  <br />
+  <b>Lista de Clientes em Redes Sociais</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Rede Social</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in clientsocialnetwork %}
+        <tr>
+          <th>{{ item.id }}</th>
+          <td>{{ item.client }}</td>
+          <td>{{ item.socialnetwork }}</td>
+          <td>
+            <a href="{% url 'clientsocialnetworks:edit_clientsocialnetwork' item.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'clientsocialnetworks:delete_clientsocialnetwork' item.id %}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
