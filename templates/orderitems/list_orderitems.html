@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Itens de Pedido - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+  <a href="{% url 'orderitems:add_orderitems' %}">Cadastrar Novo Item de Pedido</a>
+  <br />
+  <br />
+  <b>Lista de Itens de Pedido</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Pedido</th>
+        <th scope="col">Produto</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Preço Unitário</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in orderitems %}
+        <tr>
+          <th>{{ item.id }}</th>
+          <td>{{ item.order }}</td>
+          <td>{{ item.product }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>R$ {{ item.unitary_price }}</td>
+          <td>
+            <a href="{% url 'orderitems:edit_orderitems' item.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'orderitems:delete_orderitems' item.id %}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

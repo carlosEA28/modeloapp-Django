@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Adicionar Item de Pedido - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+  <b>Cadastro de Item de Pedido</b>
+  <br />
+  <br />
+  <form action="" method="POST">
+    {% csrf_token %}
+
+    <label>Produto:</label><br />
+    {{ form.product }}<br /><br />
+
+    <label>Pedido:</label><br />
+    {{ form.order }}<br /><br />
+
+    <label>Quantidade:</label><br />
+    {{ form.quantity }}<br /><br />
+
+    <label>Preço Unitário:</label><br />
+    {{ form.unitary_price }}<br /><br />
+
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}
