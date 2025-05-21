@@ -7,7 +7,7 @@ from .forms import OrderItemForm
 from .models import OrderItem
 
 def add_orderitems(request):
-    template_name = 'orderitem/add_orderitems.html'
+    template_name = 'orderitems/add_orderitems.html'
     context = {}
     if request.method == 'POST':
         form = OrderItemForm(request.POST)
@@ -21,13 +21,13 @@ def add_orderitems(request):
     return render(request, template_name, context)
 
 def list_orderitems(request):
-    template_name = "orderitem/list_orderitems.html"
+    template_name = "orderitems/list_orderitems.html"
     orderitems = OrderItem.objects.filter()
     context = {"orderitems": orderitems}
     return render(request, template_name, context)
 
 def edit_orderitems(request, id_orderitem):
-    template_name = "orderitem/add_orderitems.html"
+    template_name = "orderitems/add_orderitems.html"
     context = {}
     orderitem = get_object_or_404(OrderItem, id=id_orderitem)
 
